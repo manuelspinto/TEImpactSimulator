@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="576.0" prefWidth="1024.0" snapToPixel="false" styleClass="background" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="resources.ElectedController">
+   <children>
+      <Label layoutX="401.0" layoutY="24.0" prefHeight="51.0" prefWidth="338.0" styleClass="label-header" text="Impact Simulator" />
+      <Label layoutX="901.0" layoutY="141.0" prefHeight="25.0" prefWidth="50.0" styleClass="label-h2" text="TE" />
+      <Button fx:id="add_button" layoutX="586.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#addProviderTE" prefHeight="31.0" prefWidth="112.0" text="Add&gt;" />
+      <TextField fx:id="asn" alignment="CENTER" layoutX="539.0" layoutY="103.0" onAction="#handleAsnButtonClick" prefHeight="32.0" prefWidth="100.0" />
+      <Button fx:id="asn_button" layoutX="540.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#handleAsnButtonClick" prefHeight="31.0" prefWidth="100.0" text="Find" />
+      <TableView fx:id="providersTable" layoutX="23.0" layoutY="197.0" onMouseClicked="#handleProviderButtonClick" prefHeight="249.0" prefWidth="430.0" AnchorPane.leftAnchor="23.0">
+        <columns>
+          <TableColumn fx:id="providers" prefWidth="121.0" resizable="false" text="Providers" />
+            <TableColumn fx:id="PColNCust" prefWidth="77.0" text="C" />
+            <TableColumn fx:id="PColNPeer" prefWidth="77.0" text="R" />
+            <TableColumn fx:id="PColNProv" prefWidth="73.0" text="P" />
+            <TableColumn fx:id="PColLvl" prefWidth="75.0" text="Tier" />
+        </columns>
+      </TableView>
+      <TableView fx:id="te_providersTable" layoutX="821.0" layoutY="197.0" prefHeight="249.0" prefWidth="187.0">
+        <columns>
+          <TableColumn fx:id="te_providers" prefWidth="124.0" resizable="false" text="Providers" />
+            <TableColumn fx:id="te_prep" prefWidth="57.0" text="P" />
+        </columns>
+      </TableView>
+      <Button fx:id="remove_button" layoutX="586.0" layoutY="385.0" mnemonicParsing="false" onMouseClicked="#removeProviderTE" prefHeight="31.0" prefWidth="112.0" text="Remove&gt;" />
+      <Button fx:id="diff_button" layoutX="85.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#scopedDiff" prefHeight="31.0" prefWidth="150.0" text="Scoped" />
+      <Button fx:id="prep_button" layoutX="261.0" layoutY="461.0" mnemonicParsing="false" onMouseClicked="#prepDiff" prefHeight="31.0" prefWidth="150.0" text="Prepending" />
+      <Label layoutX="78.0" layoutY="500.0" styleClass="label-h2" text="c-&gt;P:" />
+      <Label layoutX="79.0" layoutY="521.0" styleClass="label-h2" text="c-&gt;R:" />
+      <Label fx:id="c2P" layoutX="150.0" layoutY="502.0" text="-" />
+      <Label fx:id="c2p" layoutX="151.0" layoutY="523.0" text="-" />
+      <Label fx:id="p2P" layoutX="151.0" layoutY="544.0" text="-" />
+      <Button fx:id="asn_button1" layoutX="894.0" layoutY="471.0" mnemonicParsing="false" onMouseClicked="#handlePrepButtonClick" prefHeight="31.0" prefWidth="112.0" text="AddP" />
+      <TextField fx:id="prepNum" layoutX="823.0" layoutY="470.0" onAction="#handlePrepButtonClick" prefHeight="32.0" prefWidth="68.0" text="5" />
+      <Label layoutX="272.0" layoutY="505.0" styleClass="label-h2" text="&gt;hops:" />
+      <Label fx:id="nHops" layoutX="344.0" layoutY="507.0" text="-" />
+      <Label layoutX="79.0" layoutY="542.0" styleClass="label-h2" text="R-&gt;P:" />
+      <TextField fx:id="fname" editable="false" layoutX="194.0" layoutY="102.0" prefHeight="32.0" prefWidth="231.0">
+         <font>
+            <Font size="9.0" />
+         </font></TextField>
+      <Button fx:id="open_button" layoutX="110.0" layoutY="103.0" mnemonicParsing="false" onMouseClicked="#handleOpenButtonClick" text="Open" />
+      <Button fx:id="BuildButton" layoutX="110.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#buildNetwork" prefHeight="31.0" prefWidth="84.0" text="Build" />
+      <Label fx:id="T1" layoutX="353.0" layoutY="507.0" prefHeight="21.0" prefWidth="68.0" textAlignment="CENTER" />
+      <Button fx:id="backButton" layoutX="601.0" layoutY="241.0" mnemonicParsing="false" onMouseClicked="#goBack" text="Back" />
+   </children>
+</AnchorPane>
